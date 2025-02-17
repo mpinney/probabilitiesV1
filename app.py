@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, render_template
 import json
+import os
 
 app = Flask(__name__)
 
@@ -32,4 +33,8 @@ def find():
     return jsonify(closest_entry)
 
 if __name__ == '__main__':
-    app.run(debug=True) 
+    # For local development
+    app.run(debug=True)
+else:
+    # For production
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 10000))) 
