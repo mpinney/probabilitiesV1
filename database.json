@@ -1,0 +1,12 @@
+[
+    {"name": "Rain tomorrow", "probability": 0.3, "image": "https://example.com/images/rain.jpg"},
+    {"name": "Winning a small lottery", "probability": 0.01, "image": "https://example.com/images/lottery.jpg"},
+    {"name": "Finding a parking spot near the entrance", "probability": 0.2, "image": "https://example.com/images/parking.jpg"},
+    {"name": "Getting a call from a friend", "probability": 0.5, "image": "https://example.com/images/call.jpg"},
+    {"name": "Catching a cold this month", "probability": 0.15, "image": "https://example.com/images/cold.jpg"},
+    {"name": "Having a power outage", "probability": 0.05, "image": "https://example.com/images/power-outage.jpg"},
+    {"name": "Receiving a package", "probability": 0.4, "image": "https://example.com/images/package.jpg"},
+    {"name": "Meeting someone new", "probability": 0.6, "image": "https://example.com/images/meeting.jpg"},
+    {"name": "Getting a promotion", "probability": 0.1, "image": "https://example.com/images/promotion.jpg"},
+    {"name": "Seeing a shooting star", "probability": 0.02, "image": "https://example.com/images/shooting-star.jpg"}
+] 
