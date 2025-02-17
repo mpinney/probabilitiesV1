@@ -62,7 +62,6 @@ function findClosest() {
             <div>
                 <h2>${data.name}</h2>
                 <p>Probability: ${fraction}</p>
-                <img src="${data.image}" alt="${data.name}" style="max-width: 100%; height: auto;">
             </div>
         `;
     })
