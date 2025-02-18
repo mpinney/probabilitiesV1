@@ -20,10 +20,19 @@ function updateInputFields() {
                 <input type="text" id="denominator" placeholder="Denominator">
             </div>
         `;
+        document.getElementById('numerator').addEventListener('keydown', handleEnterKey);
+        document.getElementById('denominator').addEventListener('keydown', handleEnterKey);
     } else {
         inputFields.innerHTML = `
             <input type="text" id="probability" placeholder="Enter probability" class="shadcn-input">
         `;
+        document.getElementById('probability').addEventListener('keydown', handleEnterKey);
+    }
+}
+
+function handleEnterKey(event) {
+    if (event.key === 'Enter') {
+        findClosest();
     }
 }
 
@@ -57,11 +66,24 @@ function findClosest() {
     })
     .then(response => response.json())
     .then(data => {
-        const fraction = convertToFraction(data.probability);
+        let formattedProbability;
+        switch (selectedType) {
+            case 'decimal':
+                formattedProbability = data.probability.toFixed(2);
+                break;
+            case 'percentage':
+                formattedProbability = (data.probability * 100).toFixed(2) + '%';
+                break;
+            case 'ratio':
+                formattedProbability = convertToFraction(data.probability);
+                break;
+            default:
+                formattedProbability = data.probability;
+        }
         document.getElementById('result').innerHTML = `
             <div>
                 <h2>${data.name}</h2>
-                <p>Probability: ${fraction}</p>
+                <p>Probability: ${formattedProbability}</p>
             </div>
         `;
     })
